@@ -37,34 +37,38 @@ const queryOptions = {
   limit: 100
 };
 
-indeed.query(queryOptions).then(res => {
+indeed.query(queryOptions, options).then(res => {
 	console.log(res); // An array of Job objects
 });
 ```
 
 query() accepts a _queryOptions_ object and returns a Promise of an array of _Job_ objects.
 
-- **queryOptions** object:
-  - **host** - *string* - The host to query. ([country overview](https://www.indeed.com/worldwide)) - Default: 'www.indeed.com'
-  - **query** - _string_ - The text to search. (i.e. Software Developer) - Default: _Empty String_
-  - **city** - *string* - The name of the city. Should be in the format 'Seattle, WA'. - Default: *Empty String*
-  - **radius** - _string_ - The search radius in miles - Default: '25'
-  - **level** - *string* entry*level, mid_level, or senior_level - Default: \_Empty String*
-  - **jobType** - _string_ - fulltime, contract, parttime, temporary, internship, commission - Default: _Empty String_
-  - **maxAge** - *string* - The maximum age of jobs that are returned - Default: *Empty String* (No max age)
-  - **sort** - _string_ - relevance, date - Default: 'relevance'
-  - **limit** - *number* - The maximum number of jobs to return - Default: 0 (No limit)
-  - **excludeSponsored** - _boolean_ - Exclude sponsored job postings from the results - Default: false
+* **queryOptions** object:
+	* **host** - _string_ - The host to query. ([country overview](https://www.indeed.com/worldwide)) - Default: 'www.indeed.com'
+	* **query** - _string_ - The text to search. (i.e. Software Developer) - Default: _Empty String_
+	* **city** - _string_ - The name of the city.  Should be in the format 'Seattle, WA'. - Default: _Empty String_
+	* **radius** - _string_ - The search radius in miles - Default: '25'
+	* **level** - _string_ entry_level, mid_level, or senior_level - Default: _Empty String_
+	* **jobType** - _string_ - fulltime, contract, parttime, temporary, internship, commission - Default: _Empty String_
+	* **maxAge** - _string_ - The maximum age of jobs that are returned - Default: _Empty String_ (No max age)
+	* **sort** - _string_ - relevance, date - Default: 'relevance'
+	* **limit** - _number_ - The maximum number of jobs to return - Default: 0 (No limit)
+	* **excludeSponsored** - _boolean_ - Exclude sponsored job postings from the results - Default: false
 
-- **Job** object:
-  - **title** - *string* - Title of the job
-  - **company** - _string_ - Company Name
-  - **location** - *string* - Location of the job
-  - **summary** - _string_ - Beginning of the job description
-  - **url** - *string* - Url of the job page
-  - **postDate** - _string_ - A string describing how long ago the job was posted
-  - **salary** - *string* - A string with salary information (can be empty)
-  - **isEasyApply** - _boolean_ - A boolean describing if the job is easy apply
+* **options** object:
+	* **getDescription** - _boolean_ - Get full descriptions by loading the job page. Will result in slower queries. - Default: False
+
+* **Job** object:
+	* **title** - _string_ - Title of the job
+	* **company** - _string_ - Company Name
+	* **location** - _string_ - Location of the job
+	* **summary** - _string_ - Beginning of the job description
+	* **description** - _string_ - Full job description, if specifying getDescription on options
+	* **url** - _string_ - Url of the job page
+	* **postDate** - _string_ - A string describing how long ago the job was posted
+	* **salary** - _string_ - A string with salary information (can be empty)
+  * **isEasyApply** - _boolean_ - A boolean describing if the job is easy apply
 
 ## Contributing
 
