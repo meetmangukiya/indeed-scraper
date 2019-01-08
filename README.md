@@ -27,7 +27,7 @@ const queryOptions = {
   limit: 100
 };
 
-indeed.query(queryOptions).then(res => {
+indeed.query(queryOptions, options).then(res => {
 	console.log(res); // An array of Job objects
 });
 ```
@@ -46,11 +46,15 @@ query() accepts a _queryOptions_ object and returns a Promise of an array of _Jo
 	* **limit** - _number_ - The maximum number of jobs to return - Default: 0 (No limit)
 	* **excludeSponsored** - _boolean_ - Exclude sponsored job postings from the results - Default: false
 
+* **options** object:
+	* **getDescription** - _boolean_ - Get full descriptions by loading the job page. Will result in slower queries. - Default: False
+
 * **Job** object:
 	* **title** - _string_ - Title of the job
 	* **company** - _string_ - Company Name
 	* **location** - _string_ - Location of the job
 	* **summary** - _string_ - Beginning of the job description
+	* **description** - _string_ - Full job description, if specifying getDescription on options
 	* **url** - _string_ - Url of the job page
 	* **postDate** - _string_ - A string describing how long ago the job was posted
 	* **salary** - _string_ - A string with salary information (can be empty)
