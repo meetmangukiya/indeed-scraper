@@ -12,19 +12,19 @@ I do not actively use this package. If Indeed changes their UI, this library mig
 
 You can install using [npm](https://www.npmjs.com/package/indeed-scraper).
 
-```
+```sh
 npm install indeed-scraper
 ```
 
 Include the package
 
-```
+```js
 const indeed = require('indeed-scraper');
 ```
 
 Query Indeed:
 
-```
+```js
 const queryOptions = {
   host: 'www.indeed.com',
   query: 'Software',
@@ -47,7 +47,7 @@ indeed.query(queryOptions, options).then(res => {
 ```
 
 Get job description from Indeed:
-```
+```js
 indeed.getDescription('https://www.indeed.co.uk/rc/clk?jk=e80eed3175854de9&fccid=ab643851684611c4&vjs=3').then(description => {
 	console.log(description); // Job description
 });
