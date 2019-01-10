@@ -27,8 +27,19 @@ const queryOptions = {
   limit: 100
 };
 
+const options = {
+  getDescription: true
+};
+
 indeed.query(queryOptions, options).then(res => {
 	console.log(res); // An array of Job objects
+});
+```
+
+Get job description from Indeed:
+```
+indeed.getDescription('https://www.indeed.co.uk/rc/clk?jk=e80eed3175854de9&fccid=ab643851684611c4&vjs=3').then(description => {
+	console.log(description); // Job description
 });
 ```
 
