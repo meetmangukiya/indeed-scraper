@@ -28,7 +28,7 @@ const queryOptions = {
 };
 
 const options = {
-  getDescription: true
+  getDetails: true
 };
 
 indeed.query(queryOptions, options).then(res => {
@@ -38,7 +38,7 @@ indeed.query(queryOptions, options).then(res => {
 
 Get job description from Indeed:
 ```js
-indeed.getDescription('https://www.indeed.co.uk/rc/clk?jk=e80eed3175854de9&fccid=ab643851684611c4&vjs=3').then(description => {
+indeed.getDetail('https://www.indeed.co.uk/rc/clk?jk=e80eed3175854de9&fccid=ab643851684611c4&vjs=3').then(description => {
 	console.log(description); // Job description
 });
 ```
@@ -58,14 +58,14 @@ query() accepts a _queryOptions_ object and returns a Promise of an array of _Jo
 	* **excludeSponsored** - _boolean_ - Exclude sponsored job postings from the results - Default: false
 
 * **options** object:
-	* **getDescription** - _boolean_ - Get full descriptions by loading the job page. Will result in slower queries. - Default: False
+	* **getDetails** - _boolean_ - Get additional information such as full descriptions by loading the job page. Will result in slower queries. - Default: False
 
 * **Job** object:
 	* **title** - _string_ - Title of the job
 	* **company** - _string_ - Company Name
 	* **location** - _string_ - Location of the job
 	* **summary** - _string_ - Beginning of the job description
-	* **description** - _string_ - Full job description, if specifying getDescription on options
+	* **description** - _string_ - Full job description, if specifying getDetails on options
 	* **url** - _string_ - Url of the job page
 	* **postDate** - _string_ - A string describing how long ago the job was posted
 	* **salary** - _string_ - A string with salary information (can be empty)
