@@ -66,6 +66,7 @@ query() accepts a _queryOptions_ object and returns a Promise of an array of _Jo
 	* **location** - _string_ - Location of the job
 	* **summary** - _string_ - Beginning of the job description
 	* **description** - _string_ - Full job description, if specifying getDetails on options
+	* **expired** - _boolean_ - True or false depending on if the job has expired, if specifying getDetails on options
 	* **url** - _string_ - Url of the job page
 	* **postDate** - _string_ - A string describing how long ago the job was posted
 	* **salary** - _string_ - A string with salary information (can be empty)
